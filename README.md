@@ -27,6 +27,7 @@
       - mixed chart Type
     - lineVertical
 - 웹 링크 : [https://searchme86.github.io/vite-chartjs/](https://searchme86.github.io/vite-chartjs/)
+- 작업 레포지토리 : [작업 레포지토리](https://github.com/searchme86/chartJs)
 - 작업 기간: 1개월 (10월, 2023)
 - 작업 기여도 : 100%
 - 언어 : HTML, Canvas, SCSS, VanilaJs
