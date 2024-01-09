@@ -1,26 +1,26 @@
 export const defaultData = {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   datasets: [
     {
-      label: 'Weekly Sales',
+      label: "Weekly Sales",
       data: [18, 12, 6, 9, 12, 3, 9],
       backgroundColor: [
-        'rgba(255, 26, 104, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(0, 0, 0, 0.2)',
+        "rgba(255, 26, 104, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(0, 0, 0, 0.2)",
       ],
       borderColor: [
-        'rgba(255, 26, 104, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-        'rgba(0, 0, 0, 1)',
+        "rgba(255, 26, 104, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+        "rgba(0, 0, 0, 1)",
       ],
       borderWidth: 1,
     },
@@ -61,7 +61,7 @@ export const defaultOptionsStyle = {
       ticks: {
         padding: 10,
         callback: (value, index, ticks) => {
-          return value + '만';
+          return value + "만";
         },
       },
       //pointHover속성으로 인해 x와 y축으로 일부 호버가 가려지는 것을 offset:true를 통해 간격을 제공함
@@ -71,7 +71,7 @@ export const defaultOptionsStyle = {
   },
 };
 
-const { defaultLayOut, defaultScalesX, defaultScalesY } = defaultOptionsStyle;
+const {defaultLayOut, defaultScalesX, defaultScalesY} = defaultOptionsStyle;
 
 export const defaultOptions = {
   layout: {
@@ -86,28 +86,28 @@ export const defaultOptions = {
 const defaultPlugins = {
   legend: {
     display: true,
-    position: 'bottom',
+    position: "bottom",
   },
 };
 
 const defaultConfig = {
-  type: 'bar',
+  type: "bar",
   data: defaultData,
   options: defaultOptions,
 };
 
 export const createConfig = (a, b) => {
-  if (a && typeof a !== 'string') {
+  if (a && typeof a !== "string") {
     return;
   }
 
   const ElemId = document.getElementById(a);
 
-  let CanvasId = ElemId ?? 'myChart';
+  let CanvasId = ElemId ?? "myChart";
   let chartOptionsObj = b ?? defaultConfig;
 
-  console.log('CanvasId', CanvasId);
-  console.log('chartOptionsObj', chartOptionsObj);
+  console.log("CanvasId", CanvasId);
+  console.log("chartOptionsObj", chartOptionsObj);
 
-  return { CanvasId, chartOptionsObj };
+  return {CanvasId, chartOptionsObj};
 };

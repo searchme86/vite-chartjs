@@ -1,14 +1,14 @@
-import { colorScheme } from './colorColors.js';
+import {colorScheme} from "./colorColors.js";
 
-const { blueMain, bluePointHover, bluePointBorderColor, grayMain, grayHover } =
+const {blueMain, bluePointHover, bluePointBorderColor, grayMain, grayHover} =
   colorScheme;
 
 export const chartType = {
   chartTypeLine: {
-    type: 'line',
+    type: "line",
   },
   chartTypeBar: {
-    type: 'bar',
+    type: "bar",
   },
 };
 
@@ -18,7 +18,7 @@ export const chartAnimation = {
     hoverAnimation: {
       borderWidth: 2,
       fill: false,
-      pointStyle: 'circleRot',
+      pointStyle: "circleRot",
       pointRadius: 5,
       pointBorderWidth: 2,
       pointHoverRadius: 5,

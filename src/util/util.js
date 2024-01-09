@@ -16,7 +16,7 @@ export const deleteAllChildElements = (parentElement) => {
 //
 export const generateNewObj = (arr, arrayDataLabel, obj) => {
   if (!arr.length) {
-    new Errow('배열에 값이 없습니다.');
+    new Errow("배열에 값이 없습니다.");
   }
 
   let result;
@@ -35,7 +35,7 @@ export const mixObj = (dataA, dataB) => {
     return;
   }
   let result = dataA.map((something, index) => {
-    let wow = [{ ...something }, { ...dataB[index] }];
+    let wow = [{...something}, {...dataB[index]}];
     return wow;
   });
   return result;
@@ -47,7 +47,7 @@ export const calculateDiffInfo = (dataA, dataB, hoverIndex) => {
     return;
   }
   let calculateDiff = dataA.map((dd, index) => {
-    let aa = { diff: Math.abs(dd.y - dataB[index].y), unit: '%' };
+    let aa = {diff: Math.abs(dd.y - dataB[index].y), unit: "%"};
     return aa;
   });
 
@@ -56,13 +56,13 @@ export const calculateDiffInfo = (dataA, dataB, hoverIndex) => {
 
 export const checkifExistedOrCreateTooltip = (chart) => {
   const canvasContainer = chart.canvas.parentNode;
-  let tooltipContainer = canvasContainer.querySelector('div');
+  let tooltipContainer = canvasContainer.querySelector("div");
   if (!tooltipContainer) {
-    tooltipContainer = document.createElement('div');
-    tooltipContainer.classList.add('box__tooltip-bubble');
+    tooltipContainer = document.createElement("div");
+    tooltipContainer.classList.add("box__tooltip-bubble");
 
-    const tooltipList = document.createElement('ul');
-    tooltipList.classList.add('tooltip__list');
+    const tooltipList = document.createElement("ul");
+    tooltipList.classList.add("tooltip__list");
 
     tooltipContainer.appendChild(tooltipList);
     canvasContainer.appendChild(tooltipContainer);
@@ -72,9 +72,9 @@ export const checkifExistedOrCreateTooltip = (chart) => {
 
 export const checkAndExitIfNullOrUndefined = (...args) => {
   for (const arg of args) {
-    if (arg === null || arg === undefined || arg === ' ') {
+    if (arg === null || arg === undefined || arg === " ") {
       console.log(
-        '전달한 값 중에 null이거나 undefined 혹은 값이 전달되지 않았습니다.'
+        "전달한 값 중에 null이거나 undefined 혹은 값이 전달되지 않았습니다.",
       );
       return;
     }
@@ -85,7 +85,7 @@ export const createXYCoordinateSets = (dataArrayA, dataArrayB) => {
   checkAndExitIfNullOrUndefined(dataArrayA, dataArrayB);
 
   if (dataArrayA.length !== dataArrayB.length) {
-    console.log('입력한 배열의 요소 갯수가 일치하지 않습니다.');
+    console.log("입력한 배열의 요소 갯수가 일치하지 않습니다.");
     return;
   }
 
@@ -101,11 +101,11 @@ export const createXYCoordinateSets = (dataArrayA, dataArrayB) => {
 
 export const createDiffArray = (a, b) => {
   if (!Array.isArray(a) || !Array.isArray(b)) {
-    throw new Error('모든 인자의 값은 배열이어야 합니다.');
+    throw new Error("모든 인자의 값은 배열이어야 합니다.");
   }
 
   if (a.length !== b.length) {
-    throw new Error('모든 배열의 요소 갯수를 일치시켜주세요');
+    throw new Error("모든 배열의 요소 갯수를 일치시켜주세요");
   }
 
   const c = [];

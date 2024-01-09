@@ -5,7 +5,7 @@ import {
   mixObj,
   calculateDiffInfo,
   checkifExistedOrCreateTooltip,
-} from '../util/util.js';
+} from "../util/util.js";
 
 /**
  * chart.js의 plugin으로 사용되는 함수는, 일반함수의 콜백함수와 같다고 생각합니다.
@@ -13,7 +13,7 @@ import {
  * tooltipWithLinearGraph 함수는 chartjs에서 제공하는 정보를 바탕으로 차트 정보를 가지고 툴팁을 생성하는 커스텀 함수입니다.
  * * */
 export const tooltipWithLinearGraph = (context) => {
-  const { chart, tooltip } = context;
+  const {chart, tooltip} = context;
   const tooltipContainer = checkifExistedOrCreateTooltip(chart);
   const {
     opacity: tooltipOpacity,
@@ -38,11 +38,11 @@ export const tooltipWithLinearGraph = (context) => {
   if (chart.data.datasets?.length >= 2 && tooltip._active?.length >= 2) {
     const {
       ctx,
-      data: { datasets: graphData, labels: titleXAxisOfGrapthArray },
+      data: {datasets: graphData, labels: titleXAxisOfGrapthArray},
     } = chart;
 
     const tooltipList =
-      tooltipContainer.getElementsByClassName('tooltip__list')[0];
+      tooltipContainer.getElementsByClassName("tooltip__list")[0];
     const titleXAxisArray = titleXAxisOfGrapthArray || [];
 
     /**
@@ -56,7 +56,7 @@ export const tooltipWithLinearGraph = (context) => {
     let result = generateNewObj(
       chart.data.datasets[0].data,
       chart.data.datasets[0].label,
-      { unit: '원' }
+      {unit: "원"},
     );
 
     /**
@@ -65,7 +65,7 @@ export const tooltipWithLinearGraph = (context) => {
     let resulta = generateNewObj(
       chart.data.datasets[1].data,
       chart.data.datasets[1].label,
-      { unit: '원' }
+      {unit: "원"},
     );
 
     /**
@@ -84,11 +84,7 @@ export const tooltipWithLinearGraph = (context) => {
      * 차트1과 차트2의 차이(diff)에 해당하는 데이터셋을 만들기 위해 새로운 객체를 만듭니다.
      * diff객체를 만들기 위해, 기존 객체의 데이터를 활용합니다.
      * * */
-    let { diff, unit } = calculateDiffInfo(
-      result,
-      resulta,
-      currentIndexHovered
-    );
+    let {diff, unit} = calculateDiffInfo(result, resulta, currentIndexHovered);
 
     /**
      * 새로 렌더링되는 돔을 보여주기 위해서는, 기존 돔을 삭제하기 위해,
@@ -98,8 +94,8 @@ export const tooltipWithLinearGraph = (context) => {
      * deleteAllChildElements : 모든 자식요소들을 삭제하는 함수를 import해서 tooltipList를 삭제합니다.
      * * */
 
-    deleteElementsByClass('toolTip__title');
-    deleteElementsByClass('offscreen');
+    deleteElementsByClass("toolTip__title");
+    deleteElementsByClass("offscreen");
     deleteAllChildElements(tooltipList);
 
     /**
@@ -110,23 +106,23 @@ export const tooltipWithLinearGraph = (context) => {
      */
 
     yAxisDataArrayHovered.forEach((eachYaxisData, i) => {
-      const { label, y: yAxisValue, unit } = eachYaxisData;
+      const {label, y: yAxisValue, unit} = eachYaxisData;
 
-      const tooltipLi = document.createElement('li');
-      tooltipLi.classList.add('tooltip__Item');
+      const tooltipLi = document.createElement("li");
+      tooltipLi.classList.add("tooltip__Item");
 
       /**
        *
        * 차트1과 차트2에 해당하는 데이터를 돔에 add 합니다.
        */
-      const tooltipGraphTitle = document.createElement('strong');
-      tooltipGraphTitle.classList.add('tooltip__graphTitle');
+      const tooltipGraphTitle = document.createElement("strong");
+      tooltipGraphTitle.classList.add("tooltip__graphTitle");
       const tooltipGraphTitleText = document.createTextNode(label);
       tooltipGraphTitle.appendChild(tooltipGraphTitleText);
 
       //숫자
-      const tooltipContent = document.createElement('span');
-      tooltipContent.classList.add('tooltip__graphValue');
+      const tooltipContent = document.createElement("span");
+      tooltipContent.classList.add("tooltip__graphValue");
       const tooltipItemValue = document.createTextNode(`${yAxisValue}${unit}`);
       tooltipContent.appendChild(tooltipItemValue);
 
@@ -137,18 +133,18 @@ export const tooltipWithLinearGraph = (context) => {
     });
 
     // 돔 추가
-    const moreLi = document.createElement('li');
-    moreLi.classList.add('tooltip__Item');
+    const moreLi = document.createElement("li");
+    moreLi.classList.add("tooltip__Item");
 
-    const tooltipGraphTitle = document.createElement('strong');
-    tooltipGraphTitle.classList.add('tooltip__graphTitle');
-    const tooltipGraphTitleText = document.createTextNode('취소율');
+    const tooltipGraphTitle = document.createElement("strong");
+    tooltipGraphTitle.classList.add("tooltip__graphTitle");
+    const tooltipGraphTitleText = document.createTextNode("취소율");
     tooltipGraphTitle.appendChild(tooltipGraphTitleText);
 
-    const tooltipContent = document.createElement('span');
+    const tooltipContent = document.createElement("span");
     tooltipContent.classList.add(
-      'tooltip__graphValue',
-      'tooltip__graphValue--blue'
+      "tooltip__graphValue",
+      "tooltip__graphValue--blue",
     );
 
     const tooltipItemValue = document.createTextNode(`+${diff}${unit}`);
@@ -160,13 +156,13 @@ export const tooltipWithLinearGraph = (context) => {
 
     //새롭게 내용을 추가함
     //타이틀 부분 추가
-    const tooltipStrong = document.createElement('strong');
-    tooltipStrong.classList.add('offscreen');
+    const tooltipStrong = document.createElement("strong");
+    tooltipStrong.classList.add("offscreen");
     const tooltipTitle = document.createTextNode(
-      `x축, ${titleXAxisArray[currentIndexHovered]}의 툴팁내용.`
+      `x축, ${titleXAxisArray[currentIndexHovered]}의 툴팁내용.`,
     );
     tooltipStrong.appendChild(tooltipTitle);
-    tooltipContainer.insertAdjacentElement('afterbegin', tooltipStrong);
+    tooltipContainer.insertAdjacentElement("afterbegin", tooltipStrong);
 
     /**
      * 툴팁이 보이도록 opacity에 1을 줍니다.
@@ -179,13 +175,13 @@ export const tooltipWithLinearGraph = (context) => {
      * 생성한 툴팁의 위치를 지정합니다.
      * 차트의 특정 데이터 포인트를 마우스 호버 할 경우, 생성한 툴팁이 어디에 위치 할 것인지 value를 계산합니다.
      */
-    tooltipContainer.style.left = tooltip.caretX + 'px';
+    tooltipContainer.style.left = tooltip.caretX + "px";
     tooltipContainer.style.top = `${
       tooltip.dataPoints[0].element.y -
       tooltipContainer.getBoundingClientRect().height -
       16
     }px`;
   } else {
-    console.log('그래프가 1개만 존재합니다.');
+    console.log("그래프가 1개만 존재합니다.");
   }
 };

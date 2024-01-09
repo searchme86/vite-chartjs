@@ -1,10 +1,10 @@
-import { checkAndExitIfNullOrUndefined } from '../util/util.js';
-import { colorScheme } from './colorColors.js';
+import {checkAndExitIfNullOrUndefined} from "../util/util.js";
+import {colorScheme} from "./colorColors.js";
 
-const { verticalLineBackgroundColor, verticalLineColor } = colorScheme;
+const {verticalLineBackgroundColor, verticalLineColor} = colorScheme;
 
 export const chartVerticalLine = {
-  id: 'chartVerticalLine',
+  id: "chartVerticalLine",
   afterDraw: function (chart) {
     if (chart.tooltip?._active?.length) {
       let indicator = chart.tooltip.getActiveElements();
