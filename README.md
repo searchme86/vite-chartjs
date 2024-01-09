@@ -32,6 +32,7 @@
 - 언어 : HTML, Canvas, SCSS, VanilaJs
 - 사용 라이브러리 : [ChartJS](https://www.chartjs.org/docs/latest/)
 - 번들러/배포 : [Vite](https://vitejs.dev/) / [GitHub Pages](https://pages.github.com/)
+- 반응형 : 적용안됨(향후 보완계획)
 
 ## 2. 프로젝트 목적 및 의의
 
