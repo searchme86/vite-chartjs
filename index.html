@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page | Home</title>
+  </head>
+  <body>
+    <div class="box__container">
+      <div class="box__content">
+        <strong class="text__page-title">Chartjs</strong>
+        <p class="text__page-description">
+          Chartjs로 구현한 그래프를 소개합니다.
+        </p>
+        <ul class="list__graph">
+          <li class="list-item__graph">
+            <div class="box__graph-type">
+              <div class="box__graph-image">
+                <div class="box__image">
+                  <img
+                    src="./src/assets/images/lineWithBar.png"
+                    alt="막대그래프와 선그래프가 함께 있는 그래프로, 각 그래프 데이터 포인트에 메세지 상자가 생성되는 이미지 "
+                  />
+                </div>
+              </div>
+              <div class="box__graph-content">
+                <strong class="text__graph-title">Mixed Chart</strong>
+                <ul class="list__graph-description">
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 타입</strong>
+                    <p class="text__description-content">
+                      <strong class="text__chart-type">Mixed Chart</strong>
+                      (line chart & bar chart)
+                    </p>
+                  </li>
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 목적</strong>
+                    <p class="text__description-content">
+                      선 그래프는 두 개의 막대 그래프의 평균값이 얼마나
+                      증감했는지 보여주는 목적을 갖습니다.
+                    </p>
+                  </li>
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 사용법</strong>
+                    <p class="text__description-content">
+                      그래프 포인트에 마우스 호버(hover) 합니다
+                    </p>
+                  </li>
+                </ul>
+                <a href="./src/views/lineWithBar.html" class="link__show-graph">
+                  그래프 보러가기
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="list-item__graph">
+            <div class="box__graph-type">
+              <div class="box__graph-image">
+                <div class="box__image">
+                  <img
+                    src="./src/assets/images/lineVertical.png"
+                    alt="두 개의 선 그래프가 위 아래 존재하며, 각 그래프 포인트를 세로로 이어주는 선이 있는 그래프이다, 각 그래프에 메세지 상자가 존재하는 이미지"
+                  />
+                </div>
+              </div>
+              <div class="box__graph-content">
+                <strong class="text__graph-title">line Chart</strong>
+                <ul class="list__graph-description">
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 타입</strong>
+                    <p class="text__description-content">
+                      <strong class="text__chart-type">line Chart</strong>
+                    </p>
+                  </li>
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 목적</strong>
+                    <p class="text__description-content">
+                      위 아래 두 개의 선 그래프가 존재하며, 위 아래가 서로
+                      교차하는 데이터 값의 차이를 메세지 상자에서 보여줍니다.
+                    </p>
+                  </li>
+                  <li class="list-item__graph-description">
+                    <strong class="text__description-title">차트 사용법</strong>
+                    <p class="text__description-content">
+                      그래프 포인트에 마우스 호버(hover) 합니다
+                    </p>
+                  </li>
+                </ul>
+                <a
+                  href="./src/views/lineVertical.html"
+                  class="link__show-graph"
+                >
+                  그래프 보러가기
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
